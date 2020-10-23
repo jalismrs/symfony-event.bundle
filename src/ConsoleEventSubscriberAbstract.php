@@ -11,8 +11,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  *
  * @package Jalismrs\EventBundle
  */
-abstract class ConsoleEventHandlerAbstract extends
-    EventHandlerAbstract
+abstract class ConsoleEventSubscriberAbstract extends
+    EventSubscriberAbstract
 {
     /**
      * style

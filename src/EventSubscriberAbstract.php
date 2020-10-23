@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  *
  * @package Jalismrs\EventBundle
  */
-abstract class EventHandlerAbstract implements
+abstract class EventSubscriberAbstract implements
     EventSubscriberInterface
 {
     /**
