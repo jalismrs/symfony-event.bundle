@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\EventBundle;
+namespace Jalismrs\Symfony\Common;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class EventHandlerAbstract
  *
- * @package Jalismrs\EventBundle
+ * @package Jalismrs\Symfony\Common
  */
 abstract class EventSubscriberAbstract implements
     EventSubscriberInterface
@@ -24,6 +24,8 @@ abstract class EventSubscriberAbstract implements
      * activate
      *
      * @return void
+     *
+     * @codeCoverageIgnore
      */
     final public function activate() : void
     {
@@ -34,6 +36,8 @@ abstract class EventSubscriberAbstract implements
      * isActive
      *
      * @return bool
+     *
+     * @codeCoverageIgnore
      */
     public function isActive() : bool
     {
