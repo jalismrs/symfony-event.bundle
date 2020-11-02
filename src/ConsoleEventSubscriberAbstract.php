@@ -1,15 +1,15 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\EventBundle;
+namespace Jalismrs\Symfony\Common;
 
-use Jalismrs\ErrorBundle\AssertionError;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use UnexpectedValueException;
 
 /**
  * Class ConsoleEventHandlerAbstract
  *
- * @package Jalismrs\EventBundle
+ * @package Jalismrs\Symfony\Common
  */
 abstract class ConsoleEventSubscriberAbstract extends
     EventSubscriberAbstract
@@ -29,7 +29,7 @@ abstract class ConsoleEventSubscriberAbstract extends
     public function getStyle() : SymfonyStyle
     {
         if ($this->style === null) {
-            throw new AssertionError(
+            throw new UnexpectedValueException(
                 'style has not been set'
             );
         }
@@ -43,6 +43,8 @@ abstract class ConsoleEventSubscriberAbstract extends
      * @param \Symfony\Component\Console\Style\SymfonyStyle $style
      *
      * @return void
+     *
+     * @codeCoverageIgnore
      */
     public function setStyle(
         SymfonyStyle $style
@@ -54,12 +56,12 @@ abstract class ConsoleEventSubscriberAbstract extends
      * isActive
      *
      * @return bool
+     *
+     * @codeCoverageIgnore
      */
     public function isActive() : bool
     {
-        $isActive = parent::isActive();
-        
-        return $isActive
+        return parent::isActive()
             &&
             $this->style !== null;
     }
