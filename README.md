@@ -11,7 +11,6 @@ coverage reports will be available in `var/coverage`
 ## Use
 
 ### EventSubscriberAbstract
-
 ```php
 use Jalismrs\Symfony\Common\EventSubscriberAbstract;
 use Symfony\Contracts\EventDispatcher\Event;
@@ -40,7 +39,6 @@ class SomeClass {
 ```
 
 ### ConsoleEventSubscriberAbstract
-
 ```php
 use Jalismrs\Symfony\Common\ConsoleEventSubscriberAbstract;
 use Symfony\Component\Console\Command\Command;
