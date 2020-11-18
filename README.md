@@ -11,12 +11,17 @@ coverage reports will be available in `var/coverage`
 ## Use
 
 ### EventSubscriberAbstract
-
 ```php
 use Jalismrs\Symfony\Common\EventSubscriberAbstract;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class EventSubscriber extends EventSubscriberAbstract {
+    public static function getSubscribedEvents(): array {
+        return [
+            Event::class => 'onEvent',
+        ];
+    }
+    
     public function onEvent(
         Event $event
     ): Event {
@@ -40,7 +45,6 @@ class SomeClass {
 ```
 
 ### ConsoleEventSubscriberAbstract
-
 ```php
 use Jalismrs\Symfony\Common\ConsoleEventSubscriberAbstract;
 use Symfony\Component\Console\Command\Command;
@@ -50,6 +54,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 class ConsoleEventSubscriber extends ConsoleEventSubscriberAbstract {
+    public static function getSubscribedEvents(): array {
+        return [
+            Event::class => 'onEvent',
+        ];
+    }
+    
     public function onEvent(
         Event $event
     ): Event {
